@@ -33,7 +33,7 @@ const Control = () => {
   const handleDetect = () => {
     setErrMsg(null);
     if (currentPos === null) {
-      setErrMsg("ERR: Pipett not placed.");
+      setErrMsg("ERR: Pipette not placed.");
       return;
     }
 
@@ -96,26 +96,26 @@ const Control = () => {
       return;
     }
 
-    // Pipett not placed correctly
-    if (!currentPos) setErrMsg("Please move the pipett to a valid positon.");
+    // Pipette not placed correctly
+    if (!currentPos) setErrMsg("Please move the pipette to a valid positon.");
   };
 
   const handleMoveN = () => {
     setErrMsg(null);
     if (currentPos === null) {
-      setErrMsg("ERR: Pipett not placed.");
+      setErrMsg("ERR: Pipette not placed.");
       return;
     }
     if (currentPos.Y === 4) {
-      setErrMsg("Pipett cannot go further North.");
+      setErrMsg("Pipette cannot go further North.");
     } else {
       const index = plate.findIndex(
         ({ coordinates }) =>
           currentPos.X === coordinates.X && currentPos.Y === coordinates.Y
       );
       const newPlate = [...plate];
-      newPlate[index].pipettOn = false;
-      newPlate[index + 5].pipettOn = true;
+      newPlate[index].pipetteOn = false;
+      newPlate[index + 5].pipetteOn = true;
       setCurrentPos({
         X: newPlate[index + 5].coordinates.X,
         Y: newPlate[index + 5].coordinates.Y,
@@ -128,19 +128,19 @@ const Control = () => {
   const handleMoveS = () => {
     setErrMsg(null);
     if (currentPos === null) {
-      setErrMsg("ERR: Pipett not placed.");
+      setErrMsg("ERR: Pipette not placed.");
       return;
     }
     if (currentPos.Y === 0) {
-      setErrMsg("Pipett cannot go further South.");
+      setErrMsg("Pipette cannot go further South.");
     } else {
       const index = plate.findIndex(
         ({ coordinates }) =>
           currentPos.X === coordinates.X && currentPos.Y === coordinates.Y
       );
       const newPlate = [...plate];
-      newPlate[index].pipettOn = false;
-      newPlate[index - 5].pipettOn = true;
+      newPlate[index].pipetteOn = false;
+      newPlate[index - 5].pipetteOn = true;
       setCurrentPos({
         X: newPlate[index - 5].coordinates.X,
         Y: newPlate[index - 5].coordinates.Y,
@@ -153,19 +153,19 @@ const Control = () => {
   const handleMoveW = () => {
     setErrMsg(null);
     if (currentPos === null) {
-      setErrMsg("ERR: Pipett not placed.");
+      setErrMsg("ERR: Pipette not placed.");
       return;
     }
     if (currentPos.X === 0) {
-      setErrMsg("Pipett cannot go further West.");
+      setErrMsg("Pipette cannot go further West.");
     } else {
       const index = plate.findIndex(
         ({ coordinates }) =>
           currentPos.X === coordinates.X && currentPos.Y === coordinates.Y
       );
       const newPlate = [...plate];
-      newPlate[index].pipettOn = false;
-      newPlate[index - 1].pipettOn = true;
+      newPlate[index].pipetteOn = false;
+      newPlate[index - 1].pipetteOn = true;
       setCurrentPos({
         X: newPlate[index - 1].coordinates.X,
         Y: newPlate[index - 1].coordinates.Y,
@@ -178,19 +178,19 @@ const Control = () => {
   const handleMoveE = () => {
     setErrMsg(null);
     if (currentPos === null) {
-      setErrMsg("ERR: Pipett not placed.");
+      setErrMsg("ERR: Pipette not placed.");
       return;
     }
     if (currentPos.X === 4) {
-      setErrMsg("Pipett cannot go further East.");
+      setErrMsg("Pipette cannot go further East.");
     } else {
       const index = plate.findIndex(
         ({ coordinates }) =>
           currentPos.X === coordinates.X && currentPos.Y === coordinates.Y
       );
       const newPlate = [...plate];
-      newPlate[index].pipettOn = false;
-      newPlate[index + 1].pipettOn = true;
+      newPlate[index].pipetteOn = false;
+      newPlate[index + 1].pipetteOn = true;
       setCurrentPos({
         X: newPlate[index + 1].coordinates.X,
         Y: newPlate[index + 1].coordinates.Y,
@@ -205,7 +205,7 @@ const Control = () => {
     setErrMsg(null);
 
     if (!currentPos) {
-      setErrMsg("ERR: Pipett not placed.");
+      setErrMsg("ERR: Pipette not placed.");
       return;
     }
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import RobotContext from "./context";
 import { initPlate } from "./utils/initValues";
-import PipettScreen from "./screens/PipettScreen";
+import PipetteScreen from "./screens/PipetteScreen";
 
 export default function App() {
   const [plate, setPlate] = useState(initPlate);
@@ -25,7 +25,7 @@ export default function App() {
         setErrMsg,
       }}
     >
-      <PipettScreen />
+      <PipetteScreen />
     </RobotContext.Provider>
   );
 }

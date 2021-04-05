@@ -21,7 +21,7 @@ const Plate = () => {
           key={index}
           coordinates={item.coordinates}
           color={item.filled ? colors.red : colors.green}
-          pipettOn={item.pipettOn}
+          pipetteOn={item.pipetteOn}
           text={index}
         />
       ))}

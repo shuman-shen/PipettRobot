@@ -1,13 +1,13 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 
-const Well = ({ coordinates, pipettOn, color }) => {
+const Well = ({ coordinates, pipetteOn, color }) => {
   return (
     <View style={styles(color).container}>
       <Text
         style={styles(color).text}
       >{`(${coordinates.X}, ${coordinates.Y})`}</Text>
-      {pipettOn ? (
+      {pipetteOn ? (
         <Text style={styles(color).textLarge}>{"\u2605"}</Text>
       ) : (
         <Text></Text>

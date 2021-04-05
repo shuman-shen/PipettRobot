@@ -44,8 +44,8 @@ const AppForm = ({ onClose }) => {
         item.coordinates.X === parseInt(values.X) &&
         item.coordinates.Y === parseInt(values.Y)
       ) {
-        return { ...item, pipettOn: true };
-      } else return { ...item, pipettOn: false };
+        return { ...item, pipetteOn: true };
+      } else return { ...item, pipetteOn: false };
     });
     setPlate(newPlate);
     const newSeq = [...sequence];
