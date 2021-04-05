@@ -1,4 +1,4 @@
-# PipettRobot
+# PipetteRobot
 
 This project uses Expo managed workflow.
 In order to test the code, you need expo commandline tools installed.
