@@ -1,8 +1,7 @@
 import { Formik } from "formik";
 import React, { useContext } from "react";
-import { Modal, StyleSheet, Text, View, TextInput, Button } from "react-native";
+import { Modal, StyleSheet, Text, View, TextInput } from "react-native";
 import * as Yup from "yup";
-import AppScreen from "./AppScreen";
 import RobotContext from "../context";
 import colors from "../utils/colors";
 import ControlBtn from "./ControlBtn";
@@ -18,11 +17,9 @@ const AppForm = ({ onClose }) => {
     setPlate,
     currentPos,
     setCurrentPos,
-    detectedStatus,
     setDetectedStatus,
     sequence,
     setSequence,
-    errMsg,
     setErrMsg,
   } = useContext(RobotContext);
 

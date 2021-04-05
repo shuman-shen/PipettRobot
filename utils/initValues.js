@@ -1,8 +1,3 @@
-export const initCoordinates = {
-  X: 0,
-  Y: 0,
-};
-
 export const initPlate = [
   {
     filled: false,

@@ -1,8 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import colors from "../utils/colors";
 
-const Well = ({ coordinates, pipettOn, color, text }) => {
+const Well = ({ coordinates, pipettOn, color }) => {
   return (
     <View style={styles(color).container}>
       <Text

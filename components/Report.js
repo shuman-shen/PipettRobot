@@ -4,18 +4,7 @@ import RobotContext from "../context";
 import ControlBtn from "./ControlBtn";
 
 const Report = ({ onClose }) => {
-  const {
-    plate,
-    setPlate,
-    currentPos,
-    setCurrentPos,
-    detectedStatus,
-    setDetectedStatus,
-    sequence,
-    setSequence,
-    errMsg,
-    setErrMsg,
-  } = useContext(RobotContext);
+  const { currentPos, detectedStatus, errMsg } = useContext(RobotContext);
   return (
     <Modal>
       <View style={styles.container}>

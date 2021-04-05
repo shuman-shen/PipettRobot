@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Alert, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import RobotContext from "../context";
 import colors from "../utils/colors";
 import { initPlate } from "../utils/initValues";
@@ -17,13 +17,13 @@ const Control = () => {
     setDetectedStatus,
     sequence,
     setSequence,
-    errMsg,
     setErrMsg,
   } = useContext(RobotContext);
 
   const [showInput, setShowInput] = useState(false);
   const [showReport, setShowReport] = useState(false);
 
+  // show input modal for coordinates
   const handleShowInput = (status) => {
     if (status === undefined) {
       setShowInput(!showInput);
@@ -51,6 +51,8 @@ const Control = () => {
 
   const handleDrop = () => {
     setErrMsg(null);
+
+    // Detect well status if not to validate drop action
     let res = null;
     if (currentPos && detectedStatus === null) {
       res = plate.find(
@@ -69,6 +71,8 @@ const Control = () => {
         setDetectedStatus(false);
       }
     }
+
+    // Empty well with a valid drop action
     if (
       currentPos &&
       (detectedStatus === false || (res !== null && res.filled === false))
@@ -86,10 +90,13 @@ const Control = () => {
       return;
     }
 
+    // Well is full, no need to drop
     if (currentPos && detectedStatus === true) {
       setErrMsg(`Well (${currentPos.X}, ${currentPos.Y}) is already full.`);
       return;
     }
+
+    // Pipett not placed correctly
     if (!currentPos) setErrMsg("Please move the pipett to a valid positon.");
   };
 
@@ -202,6 +209,7 @@ const Control = () => {
       return;
     }
 
+    // Detect before report
     if (detectedStatus === null) {
       const res = plate.find(
         (item) =>
@@ -217,6 +225,7 @@ const Control = () => {
     setShowReport(true);
   };
 
+  // Reset to an empty plate
   const handleReset = () => {
     setCurrentPos(null);
     setDetectedStatus(null);

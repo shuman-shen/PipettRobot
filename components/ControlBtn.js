@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Button,
-  StyleSheet,
-  Text,
-  TouchableHighlight,
-  View,
-} from "react-native";
+import { StyleSheet, Text, TouchableHighlight } from "react-native";
 import colors from "../utils/colors";
 
 const ControlBtn = ({ title, onPress, style, disabled }) => {
